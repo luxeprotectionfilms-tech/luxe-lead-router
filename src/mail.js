@@ -47,7 +47,7 @@ async function sendAll(lead, routing, priority) {
     results.installer = await t.sendMail({
       from: `"${brand}" <${from}>`, to: routing.assigned.leadEmail, cc: corp, replyTo: lead.email,
       subject: `New LUXE PPF lead near you — ${lead.vehicleYear} ${lead.vehicle} (${lead.zip})`,
-      html: `<p>Hi ${esc(routing.assigned.name)},</p><p>A customer near you requested a LUXE PPF quote through the LUXE Installer Locator. Please reach out within 24 hours.</p>${leadTable(lead, routing, priority)}<p style="color:#666;font-size:12px">Sent by ${brand}. Reply to this email to contact the customer directly.</p>`
+      html: `<p>Hi ${esc(routing.assigned.name)},</p><p>A customer near you requested a LUXE PPF quote through the LUXE Installer Locator. Please reach out within 24 hours.</p>${leadTable(lead, routing, priority)}<p style="margin-top:14px">Need LUXE film for this job? Order on the dealer portal at <a href="https://www.luxeppfilms.com">luxeppfilms.com</a> or reply to this email and our team will get you set up.</p><p style="color:#666;font-size:12px">Sent by ${brand}. Reply-to is the customer; cc ${corp[0]} stays on the thread.</p>`
     });
   }
 
