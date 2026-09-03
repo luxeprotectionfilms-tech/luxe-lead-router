@@ -1,5 +1,8 @@
-<!-- LUXE Installer Match form — paste this whole block into a WordPress Custom HTML block or a Shopify page (Show HTML). Set data-source per site. -->
-<div id="luxe-il" data-endpoint="https://LEAD_ROUTER_HOST/api/installer-lead" data-source="wordpress">
+<!-- LUXE Installer Match — modal version for the fixed-layout Store Locator page -->
+<div id="luxe-il-modal" style="display:none;position:fixed;inset:0;z-index:1000000;background:rgba(0,0,0,.62);overflow:auto;padding:40px 16px">
+<div style="position:relative;max-width:760px;margin:0 auto">
+<button type="button" id="luxe-il-close" aria-label="Close" style="position:absolute;top:8px;right:8px;z-index:2;width:38px;height:38px;border:0;border-radius:50%;background:#111;color:#fff;font-size:22px;line-height:38px;cursor:pointer">&times;</button>
+<div id="luxe-il" data-endpoint="https://sea-lion-app-2-wynem.ondigitalocean.app/api/installer-lead" data-source="wordpress">
 <style>
 #luxe-il{--g:#F2B705;--k:#111;--bg:#f4f4f4;--bd:#d9d9d9;font-family:Poppins,Inter,system-ui,Arial,sans-serif;background:var(--bg);color:var(--k);padding:32px 28px;border-radius:12px;max-width:720px;margin:0 auto;box-sizing:border-box}
 #luxe-il *{box-sizing:border-box}
@@ -66,7 +69,7 @@
   <label class="consent"><input type="checkbox" name="consent" required><span>I consent to LUXE Protection Films sharing my information with a certified LUXE installer in my area so they can contact me about a free estimate. <b>*</b></span></label>
   <button type="submit">Get My Free Quote</button>
   <div class="err" id="luxe-il-err"></div>
-  <p class="fine">LUXE films carry a 10-year manufacturer warranty when installed by a certified installer and registered. Prefer to browse? <a href="https://luxeprotectionfilms.com/installer-locator/">See all LUXE installers</a>.</p>
+  <p class="fine">LUXE films carry a 10-year manufacturer warranty when installed by a certified installer and registered. Prefer to browse? Close this window and use the map.</p>
 </form>
 <div class="done" id="luxe-il-done"></div>
 <script>
@@ -90,7 +93,7 @@
     fetch(ep,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(function(r){return r.json()}).then(function(r){
       if(!r.ok)throw new Error(r.error||'error');
       var d=document.getElementById('luxe-il-done'),list=(r.nearest||[]).map(function(n){return '<li><b>'+n.name+'</b> — '+[n.address,n.city,n.state].filter(Boolean).join(', ')+(n.phone?' · '+n.phone:'')+(n.distanceMi!=null?' · '+n.distanceMi+' mi':'')+'</li>'}).join('');
-      d.innerHTML='<h3>You\'re in. '+(r.assigned?'<span style="font-weight:400">We\'ve sent your request to <b>'+r.assigned+'</b>.</span>':'<span style="font-weight:400">Our team is matching you with the right installer.</span>')+'</h3><p>Expect a call or email shortly. A confirmation is on its way to your inbox.</p>'+(list?'<p>Nearest LUXE installers:</p><ul>'+list+'</ul>':'')+'<p><a href="https://luxeprotectionfilms.com/installer-locator/">Browse all LUXE installers →</a></p>';
+      d.innerHTML='<h3>You\'re in. '+(r.assigned?'<span style="font-weight:400">We\'ve sent your request to <b>'+r.assigned+'</b>.</span>':'<span style="font-weight:400">Our team is matching you with the right installer.</span>')+'</h3><p>Expect a call or email shortly. A confirmation is on its way to your inbox.</p>'+(list?'<p>Nearest LUXE installers:</p><ul>'+list+'</ul>':'');
       f.style.display='none';d.style.display='block';root.scrollIntoView({behavior:'smooth',block:'start'});
       try{window.dataLayer=window.dataLayer||[];window.dataLayer.push({event:'luxe_installer_lead',priority:r.priority,covered:r.covered,source:src});}catch(_){}
     }).catch(function(){err.textContent='Something went wrong. Please try again or call (510) 366-7351.';err.style.display='block';b.disabled=false;b.textContent='Get My Free Quote';});
@@ -98,3 +101,29 @@
 })();
 </script>
 </div>
+
+</div></div>
+<style>
+.luxe-il-cta{display:block;width:100%;margin-top:10px;height:44px;border:0;border-radius:6px;background:#111;color:#fff!important;font:600 15px/44px Poppins,Inter,system-ui,Arial,sans-serif;text-align:center;cursor:pointer;text-decoration:none!important}
+.luxe-il-cta:hover{background:#F2B705;color:#111!important}
+.luxe-il-pill{position:absolute;top:14px;right:14px;z-index:5;background:#F2B705;color:#111;border:0;border-radius:999px;padding:0 18px;height:40px;font:600 14px/40px Poppins,Inter,system-ui,Arial,sans-serif;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.25)}
+.luxe-il-pill:hover{background:#111;color:#fff}
+@media(max-width:768px){.luxe-il-pill{top:auto;bottom:18px;right:14px}}
+</style>
+<script>
+(function(){
+  var m=document.getElementById('luxe-il-modal');if(!m||m.dataset.init)return;m.dataset.init='1';
+  function open(){m.style.display='block';document.documentElement.style.overflow='hidden';setTimeout(function(){var i=m.querySelector('input[name=firstName]');if(i)i.focus()},50);}
+  function close(){m.style.display='none';document.documentElement.style.overflow='';}
+  document.getElementById('luxe-il-close').addEventListener('click',close);
+  m.addEventListener('click',function(e){if(e.target===m)close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+  if(location.hash==='#quote')open();
+  var tries=0,t=setInterval(function(){
+    var sf=document.querySelector('#asl-storelocator .search_filter'),map=document.querySelector('#asl-storelocator .asl-map');
+    if(sf&&!sf.querySelector('.luxe-il-cta')){var b=document.createElement('button');b.type='button';b.className='luxe-il-cta';b.textContent='Get Matched With a LUXE Installer';b.addEventListener('click',open);sf.appendChild(b);}
+    if(map&&!map.querySelector('.luxe-il-pill')){var p=document.createElement('button');p.type='button';p.className='luxe-il-pill';p.textContent='Free Quote →';p.addEventListener('click',open);if(getComputedStyle(map).position==='static')map.style.position='relative';map.appendChild(p);}
+    if((sf&&map)||++tries>40)clearInterval(t);
+  },250);
+})();
+</script>
