@@ -62,7 +62,7 @@
   "phone": "",
   "website": "",
   "leadEmail": "myautofactor@gmail.com",
-  "leadEmailApproved": false,
+  "leadEmailApproved": true,
   "hours": "Mon–Sun 9:30 AM – 6:30 PM",
   "lat": 37.9743,
   "lng": -121.3154
@@ -96,7 +96,7 @@
   "phone": "+34 916 33 43 69",
   "website": "",
   "leadEmail": "comercial@carcareeurope.es",
-  "leadEmailApproved": false,
+  "leadEmailApproved": true,
   "hours": "Mon–Sun 9:30 AM – 6:30 PM",
   "lat": 40.4053,
   "lng": -3.879
@@ -165,7 +165,7 @@
   "phone": "(209) 884-0903",
   "website": "",
   "leadEmail": "Limitlessautomotivedetailing@yahoo.com",
-  "leadEmailApproved": false,
+  "leadEmailApproved": true,
   "hours": "Mon–Sun 9:00 AM – 5:30 PM",
   "lat": 37.8134,
   "lng": -121.2132
@@ -233,7 +233,7 @@
   "phone": "(701) 365-0010",
   "website": "",
   "leadEmail": "straightlinedetailing@gmail.com",
-  "leadEmailApproved": false,
+  "leadEmailApproved": true,
   "hours": "Mon–Sun 9:30 AM – 6:30 PM",
   "lat": 46.8564,
   "lng": -96.8123
@@ -250,7 +250,7 @@
   "phone": "(209) 244-8901",
   "website": "",
   "leadEmail": "thedarksidetintllc@gmail.com",
-  "leadEmailApproved": false,
+  "leadEmailApproved": true,
   "hours": "Mon–Sun 9:30 AM – 6:30 PM",
   "lat": 38.025,
   "lng": -121.2972
@@ -284,7 +284,7 @@
   "phone": "(209) 501-6000",
   "website": "",
   "leadEmail": "thumper400@yahoo.com",
-  "leadEmailApproved": false,
+  "leadEmailApproved": true,
   "hours": "Mon–Sun 9:30 AM – 6:30 PM",
   "lat": 37.6746,
   "lng": -121.0113
@@ -301,7 +301,7 @@
   "phone": "(209) 595-6415",
   "website": "",
   "leadEmail": "Detail209@icloud.com",
-  "leadEmailApproved": false,
+  "leadEmailApproved": true,
   "hours": "Mon–Sun 9:30 AM – 6:30 PM",
   "lat": 37.5833,
   "lng": -120.9496
@@ -318,7 +318,7 @@
   "phone": "+55 27 99580-6156",
   "website": "",
   "leadEmail": "zuin.comunicacaovisual@gmail.com",
-  "leadEmailApproved": false,
+  "leadEmailApproved": true,
   "hours": "Mon–Sun 9:30 AM – 6:30 PM",
   "lat": -20.3297,
   "lng": -40.2925
