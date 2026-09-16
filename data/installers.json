@@ -12,7 +12,7 @@
   "website": "https://gravitygarage.luxeprotectionfilms.com",
   "leadEmail": "",
   "leadEmailApproved": false,
-  "hours": "Mon–Fri 9:00 AM – 5:00 PM",
+  "hours": "Mon\u2013Fri 9:00 AM \u2013 5:00 PM",
   "lat": 34.3985,
   "lng": -118.5535
  },
@@ -29,7 +29,7 @@
   "website": "https://sfsbayarea.luxeprotectionfilms.com",
   "leadEmail": "info@sfsbayarea.com",
   "leadEmailApproved": true,
-  "hours": "Mon–Fri 8:00 AM – 4:00 PM",
+  "hours": "Mon\u2013Fri 8:00 AM \u2013 4:00 PM",
   "lat": 37.3476,
   "lng": -121.887
  },
@@ -46,7 +46,7 @@
   "website": "",
   "leadEmail": "",
   "leadEmailApproved": false,
-  "hours": "Mon–Sun 9:30 AM – 6:30 PM",
+  "hours": "Mon\u2013Sun 9:30 AM \u2013 6:30 PM",
   "lat": 27.339,
   "lng": -82.3473
  },
@@ -63,7 +63,7 @@
   "website": "",
   "leadEmail": "myautofactor@gmail.com",
   "leadEmailApproved": true,
-  "hours": "Mon–Sun 9:30 AM – 6:30 PM",
+  "hours": "Mon\u2013Sun 9:30 AM \u2013 6:30 PM",
   "lat": 37.9743,
   "lng": -121.3154
  },
@@ -80,7 +80,7 @@
   "website": "",
   "leadEmail": "",
   "leadEmailApproved": false,
-  "hours": "Mon–Sun 9:30 AM – 6:30 PM",
+  "hours": "Mon\u2013Sun 9:30 AM \u2013 6:30 PM",
   "lat": 35.7595,
   "lng": -5.834
  },
@@ -97,7 +97,7 @@
   "website": "",
   "leadEmail": "comercial@carcareeurope.es",
   "leadEmailApproved": true,
-  "hours": "Mon–Sun 9:30 AM – 6:30 PM",
+  "hours": "Mon\u2013Sun 9:30 AM \u2013 6:30 PM",
   "lat": 40.4053,
   "lng": -3.879
  },
@@ -114,8 +114,8 @@
   "website": "",
   "leadEmail": "",
   "leadEmailApproved": false,
-  "hours": "Mon–Sun 9:30 AM – 6:30 PM",
-  "note": "Listed as 'Colorado' only; 719 area code → Colorado Springs assumed",
+  "hours": "Mon\u2013Sun 9:30 AM \u2013 6:30 PM",
+  "note": "Listed as 'Colorado' only; 719 area code \u2192 Colorado Springs assumed",
   "lat": 38.8388,
   "lng": -104.8145
  },
@@ -132,7 +132,7 @@
   "website": "",
   "leadEmail": "",
   "leadEmailApproved": false,
-  "hours": "Mon–Sun 9:30 AM – 6:30 PM",
+  "hours": "Mon\u2013Sun 9:30 AM \u2013 6:30 PM",
   "lat": 27.8802,
   "lng": -82.7534
  },
@@ -149,7 +149,7 @@
   "website": "",
   "leadEmail": "",
   "leadEmailApproved": false,
-  "hours": "Mon–Sun 9:30 AM – 6:30 PM",
+  "hours": "Mon\u2013Sun 9:30 AM \u2013 6:30 PM",
   "lat": 28.5644,
   "lng": -81.8745
  },
@@ -166,7 +166,7 @@
   "website": "",
   "leadEmail": "Limitlessautomotivedetailing@yahoo.com",
   "leadEmailApproved": true,
-  "hours": "Mon–Sun 9:00 AM – 5:30 PM",
+  "hours": "Mon\u2013Sun 9:00 AM \u2013 5:30 PM",
   "lat": 37.8134,
   "lng": -121.2132
  },
@@ -183,7 +183,7 @@
   "website": "",
   "leadEmail": "",
   "leadEmailApproved": false,
-  "hours": "Mon–Sun 9:30 AM – 6:30 PM",
+  "hours": "Mon\u2013Sun 9:30 AM \u2013 6:30 PM",
   "lat": 34.0447,
   "lng": -118.4487
  },
@@ -200,26 +200,9 @@
   "website": "",
   "leadEmail": "",
   "leadEmailApproved": false,
-  "hours": "Mon–Sun 9:30 AM – 6:30 PM",
+  "hours": "Mon\u2013Sun 9:30 AM \u2013 6:30 PM",
   "lat": 40.7315,
   "lng": -73.4327
- },
- {
-  "id": "silicon-valley-autospa",
-  "name": "Silicon Valley Autospa",
-  "tier": "LUXE House Shop",
-  "address": "33403 Western Ave",
-  "city": "Union City",
-  "state": "CA",
-  "zip": "94587",
-  "country": "US",
-  "phone": "(510) 598-4324",
-  "website": "https://siliconvalleyautospa.com",
-  "leadEmail": "Sales@siliconvalleyautospa.com",
-  "leadEmailApproved": true,
-  "hours": "Mon–Fri 9:30 AM – 5:30 PM",
-  "lat": 37.5895,
-  "lng": -122.0497
  },
  {
   "id": "straight-line-detailing",
@@ -234,7 +217,7 @@
   "website": "",
   "leadEmail": "straightlinedetailing@gmail.com",
   "leadEmailApproved": true,
-  "hours": "Mon–Sun 9:30 AM – 6:30 PM",
+  "hours": "Mon\u2013Sun 9:30 AM \u2013 6:30 PM",
   "lat": 46.8564,
   "lng": -96.8123
  },
@@ -251,7 +234,7 @@
   "website": "",
   "leadEmail": "thedarksidetintllc@gmail.com",
   "leadEmailApproved": true,
-  "hours": "Mon–Sun 9:30 AM – 6:30 PM",
+  "hours": "Mon\u2013Sun 9:30 AM \u2013 6:30 PM",
   "lat": 38.025,
   "lng": -121.2972
  },
@@ -268,7 +251,7 @@
   "website": "",
   "leadEmail": "",
   "leadEmailApproved": false,
-  "hours": "Mon–Sun 9:30 AM – 6:30 PM",
+  "hours": "Mon\u2013Sun 9:30 AM \u2013 6:30 PM",
   "lat": 37.5308,
   "lng": -121.9712
  },
@@ -285,7 +268,7 @@
   "website": "",
   "leadEmail": "thumper400@yahoo.com",
   "leadEmailApproved": true,
-  "hours": "Mon–Sun 9:30 AM – 6:30 PM",
+  "hours": "Mon\u2013Sun 9:30 AM \u2013 6:30 PM",
   "lat": 37.6746,
   "lng": -121.0113
  },
@@ -302,7 +285,7 @@
   "website": "",
   "leadEmail": "Detail209@icloud.com",
   "leadEmailApproved": true,
-  "hours": "Mon–Sun 9:30 AM – 6:30 PM",
+  "hours": "Mon\u2013Sun 9:30 AM \u2013 6:30 PM",
   "lat": 37.5833,
   "lng": -120.9496
  },
@@ -319,7 +302,7 @@
   "website": "",
   "leadEmail": "zuin.comunicacaovisual@gmail.com",
   "leadEmailApproved": true,
-  "hours": "Mon–Sun 9:30 AM – 6:30 PM",
+  "hours": "Mon\u2013Sun 9:30 AM \u2013 6:30 PM",
   "lat": -20.3297,
   "lng": -40.2925
  }
