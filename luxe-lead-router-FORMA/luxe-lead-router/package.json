@@ -1,0 +1,9 @@
+{
+  "name": "luxe-lead-router",
+  "version": "1.0.0",
+  "description": "LUXE Protection Films — shared installer-lead form handler (WordPress, Shopify, ELITE microsites)",
+  "main": "src/server.js",
+  "scripts": { "start": "node src/server.js", "test": "node test/smoke.js" },
+  "engines": { "node": ">=18" },
+  "dependencies": { "express": "^4.19.2", "nodemailer": "^6.9.14", "zipcodes": "^8.0.0" }
+}
