@@ -10,9 +10,12 @@ const esc = v => String(v ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '
 
 const SERVICES = ['PPF', 'Window Tint', 'Vinyl Wrap'];
 const PLOTTERS = ['Graphtec', 'Summa', 'Roland', 'Mimaki', 'GCC', 'Teneth', 'Other', 'No plotter yet'];
-const SOFTWARE = ['XPEL DAP', 'Computer Cut', 'Other pattern software', 'None / hand cut'];
+const SOFTWARE = ['XPEL DAP', 'Core by Eastman', 'DigiCut', 'Other', 'Not currently using pattern software'];
+// v1.1 values still accepted so a page cached before the update never fails.
+const SOFTWARE_LEGACY = ['Computer Cut', 'Other pattern software', 'None / hand cut'];
 const VOLUMES = ['1-5', '6-15', '16-30', '31-60', '60+'];
-const LUXE_STATUS = ['Current LUXE Dealer', 'Current LUXE Elite Dealer', 'Not currently a LUXE customer'];
+const LUXE_STATUS = ['LUXE Certified Installer', 'LUXE Elite Installer', 'LUXE Authorized Distributor', 'LUXE Regional Hub', 'Not currently a LUXE Installer'];
+const LUXE_STATUS_LEGACY = ['Current LUXE Dealer', 'Current LUXE Elite Dealer', 'Not currently a LUXE customer'];
 
 // Zoho picklist values (must match the FT_ fields created in Leads).
 const STAGE_NEW = 'Trial Requested';
@@ -53,16 +56,18 @@ function validate(b) {
   if (!a.services.length) e.push('services');
   if (!PLOTTERS.includes(a.plotterBrand)) e.push('plotterBrand');
   if (a.plotterBrand !== 'No plotter yet' && !a.plotterModel) e.push('plotterModel');
-  if (!SOFTWARE.includes(a.patternSoftware)) e.push('patternSoftware');
+  if (![...SOFTWARE, ...SOFTWARE_LEGACY].includes(a.patternSoftware)) e.push('patternSoftware');
+  if (a.patternSoftware === 'Other' && !a.patternSoftwareOther) e.push('patternSoftwareOther');
   if (!VOLUMES.includes(a.monthlyInstalls)) e.push('monthlyInstalls');
-  if (!LUXE_STATUS.includes(a.luxeStatus)) e.push('luxeStatus');
+  if (![...LUXE_STATUS, ...LUXE_STATUS_LEGACY].includes(a.luxeStatus)) e.push('luxeStatus');
   if (!a.testFocus) e.push('testFocus');
   if (!/^\d{4}-\d{2}-\d{2}$/.test(a.startDate)) e.push('startDate');
   if (!a.consent) e.push('consent');
   return { app: a, errors: e };
 }
 
-const softwareLabel = a => a.patternSoftware === 'Other pattern software' && a.patternSoftwareOther ? `Other: ${a.patternSoftwareOther}` : a.patternSoftware;
+// "Other" stores the name the applicant typed, not the word "Other".
+const softwareLabel = a => (a.patternSoftware === 'Other' || a.patternSoftware === 'Other pattern software') && a.patternSoftwareOther ? a.patternSoftwareOther : a.patternSoftware;
 function businessType(services) {
   const p = services.includes('PPF'), t = services.includes('Window Tint');
   return p && t ? 'PPF + Tint Shop' : p ? 'PPF Installer' : t ? 'Tint Installer' : 'Other Automotive Industry';
