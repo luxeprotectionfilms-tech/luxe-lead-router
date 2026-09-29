@@ -3,6 +3,7 @@ const express = require('express');
 const { route, priorityFor, installers, publicInstaller } = require('./routing');
 const zoho = require('./zoho');
 const mail = require('./mail');
+const forma = require('./forma');
 
 const app = express();
 app.set('trust proxy', 1);
@@ -90,6 +91,9 @@ app.post('/api/installer-lead', async (req, res) => {
   console.log(JSON.stringify({ event: 'installer_lead', ...log, mail: out.mail, zoho: out.zoho }));
   res.json(out);
 });
+
+// LUXE FORMA 7-Day Trial applications (Shopify /pages/luxe-forma-trial).
+app.post('/api/forma-trial', (req, res) => forma.handle(req, res, rateLimited));
 
 const PORT = process.env.PORT || 8080;
 if (require.main === module) app.listen(PORT, () => console.log(`luxe-lead-router on :${PORT} (zoho=${zoho.enabled()} mail=${mail.enabled()})`));

@@ -72,4 +72,4 @@ async function createLead(lead, routing, priority) {
   return { id: d.details.id };
 }
 
-module.exports = { enabled, createLead, buildLead };
+module.exports = { enabled, createLead, buildLead, accessToken };

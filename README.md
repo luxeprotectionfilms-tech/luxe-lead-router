@@ -22,3 +22,9 @@ Edit `data/installers.json`: set `leadEmail` to the address the shop owner suppl
 
 ## Test
 `RATE_LIMIT_OFF=1 npm test`
+
+## LUXE FORMA 7-Day Trial applications
+`POST /api/forma-trial` (Shopify page `/pages/luxe-forma-trial`, form source in `public/luxe-forma-trial-page.html`).
+Validates → Zoho dedupe (Leads by email → Contacts by email → company-name flag) → create or update Lead with `FT_*` fields, Lead Source `LUXE FORMA`, Lead Status `Trial Requested`, tag `FORMA-TRIAL` (best effort) → emails `sales1@` (subject `NEW LUXE FORMA TRIAL APPLICATION — <Business>`, bcc info@ with `LUXE-FORMA-JSON` block for the hourly sync job) → applicant confirmation. Never provisions software.
+Repeat applicants: updated in place, original Lead Source + `FT_Applied_At` preserved, customer statuses (Approved / First Order / Reorder) never downgraded, each application logged as a Note.
+Test: `node test/forma.js` (offline, mocks Zoho + SMTP).
